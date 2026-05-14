@@ -1,40 +1,33 @@
-# Bro Ayasa / Flev Agent — Bento Dashboard
+# Ayasa / Flev Agent — Profile Dashboard
 
-Single-file HTML portfolio dashboard with neobrutalist cyberpunk styling.
+Single-file HTML portfolio dashboard with Vibrant Anime-Inspired Neobrutalism styling.
+
+## Live Deployment
+
+- Production: [ayasa-profile.vercel.app](https://ayasa-profile.vercel.app)
 
 ## Files
 
 - `index.html` — complete responsive dashboard, Tailwind CDN + custom CSS + small JS interactions.
-- `README.md` — opening instructions.
+- `README.md` — project information.
 
-## How to open
-
-### Direct open
-
-Open `index.html` in any modern browser:
-
-```bash
-xdg-open /root/ayasa-bento-dashboard/index.html
-```
-
-### Local static server
+## Local Preview
 
 From this folder:
 
 ```bash
-cd /root/ayasa-bento-dashboard
+cd /root/ayasa-profile
 python3 -m http.server 8080
 ```
 
-Then visit:
+## System Transmission Signal
 
-```text
-http://localhost:8080
-```
+- **Activity**: Mining, DeFi and Crypto Researcher
+- **Status**: Deployment Synchronized
 
 ## Notes
 
 - No build step required.
 - Uses Tailwind via CDN and robust inline custom CSS.
-- Contains live UTC clock, accent switcher, and subtle card tilt interaction.
+- Contains live UTC clock and subtle interactions.
 - Risk content is labeled as research/forensic notes and is not financial advice.
