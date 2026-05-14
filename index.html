@@ -170,8 +170,8 @@
     <header class="mb-12 flex flex-col md:flex-row items-center justify-between gap-8">
       <div class="flex items-center gap-8">
         <div class="w-24 h-24 sm:w-36 sm:h-36 bg-cyber-purple border-6 border-black shadow-brutal-pink flex items-center justify-center relative group overflow-hidden">
-            <div class="absolute inset-0 halftone-pink opacity-40 group-hover:opacity-60 transition-opacity"></div>
-            <span class="font-syne font-black text-5xl sm:text-7xl z-10 text-white drop-shadow-[4px_4px_0px_rgba(0,0,0,1)]">A</span>
+            <img src="./assets/ayasa-profile.jpg" alt="Ayasa profile photo" class="w-full h-full object-cover" loading="eager" decoding="async" />
+            <div class="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-black/20 pointer-events-none"></div>
         </div>
         <div>
           <h1 class="font-syne font-extrabold text-6xl sm:text-8xl leading-[0.8] tracking-tighter text-black">
@@ -338,7 +338,7 @@
         
         <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 relative z-10">
             <!-- BTC -->
-            <div class="relative group/node border-4 border-black bg-cyber-yellow p-6 shadow-brutal-black hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all cursor-crosshair">
+            <div id="node-bitcoin" class="relative group/node border-4 border-black bg-cyber-yellow p-6 shadow-brutal-black hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all cursor-crosshair">
                 <div class="flex justify-between items-start mb-6">
                     <span class="font-mono text-xs font-black bg-black text-cyber-yellow px-2 py-0.5">NODE_01</span>
                     <span class="font-mono text-xs font-black text-black">BTC</span>
@@ -350,13 +350,14 @@
                     </svg>
                 </div>
                 <div class="mt-6 border-t-4 border-black pt-3 font-mono text-xs flex justify-between font-black text-black">
-                    <span>SENTIMENT</span>
-                    <span class="text-black bg-white px-1">BULLISH</span>
+                    <span id="bitcoin-label">PRICE</span>
+                    <span id="bitcoin-price" class="text-black bg-white px-1">LOADING...</span>
                 </div>
+                <div id="bitcoin-change" class="mt-2 font-mono text-[10px] font-black uppercase">24h: --</div>
             </div>
 
             <!-- ETH -->
-            <div class="relative group/node border-4 border-black bg-cyber-cyan p-6 shadow-brutal-black hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all cursor-crosshair">
+            <div id="node-ethereum" class="relative group/node border-4 border-black bg-cyber-cyan p-6 shadow-brutal-black hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all cursor-crosshair">
                 <div class="flex justify-between items-start mb-6">
                     <span class="font-mono text-xs font-black bg-black text-cyber-cyan px-2 py-0.5">NODE_02</span>
                     <span class="font-mono text-xs font-black text-black">ETH</span>
@@ -370,13 +371,14 @@
                     </svg>
                 </div>
                 <div class="mt-6 border-t-4 border-black pt-3 font-mono text-xs flex justify-between font-black text-black">
-                    <span>L2_VOLUME</span>
-                    <span>HIGH</span>
+                    <span id="ethereum-label">PRICE</span>
+                    <span id="ethereum-price">LOADING...</span>
                 </div>
+                <div id="ethereum-change" class="mt-2 font-mono text-[10px] font-black uppercase">24h: --</div>
             </div>
 
             <!-- SOL -->
-            <div class="relative group/node border-4 border-black bg-cyber-purple p-6 shadow-brutal-black hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all cursor-crosshair">
+            <div id="node-solana" class="relative group/node border-4 border-black bg-cyber-purple p-6 shadow-brutal-black hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all cursor-crosshair">
                 <div class="flex justify-between items-start mb-6">
                     <span class="font-mono text-xs font-black bg-black text-cyber-purple px-2 py-0.5">NODE_03</span>
                     <span class="font-mono text-xs font-black text-white">SOL</span>
@@ -389,13 +391,14 @@
                     </svg>
                 </div>
                 <div class="mt-6 border-t-4 border-black pt-3 font-mono text-xs flex justify-between font-black text-white">
-                    <span>NETWORK</span>
-                    <span class="text-cyber-cyan">STABLE</span>
+                    <span id="solana-label">PRICE</span>
+                    <span id="solana-price" class="text-cyber-cyan">LOADING...</span>
                 </div>
+                <div id="solana-change" class="mt-2 font-mono text-[10px] font-black uppercase text-cyber-cyan">24h: --</div>
             </div>
 
             <!-- BNB -->
-            <div class="relative group/node border-4 border-black bg-white p-6 shadow-brutal-black hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all cursor-crosshair">
+            <div id="node-binancecoin" class="relative group/node border-4 border-black bg-white p-6 shadow-brutal-black hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all cursor-crosshair">
                 <div class="flex justify-between items-start mb-6">
                     <span class="font-mono text-xs font-black bg-black text-white px-2 py-0.5">NODE_04</span>
                     <span class="font-mono text-xs font-black text-black">BNB</span>
@@ -409,9 +412,10 @@
                     </svg>
                 </div>
                 <div class="mt-6 border-t-4 border-black pt-3 font-mono text-xs flex justify-between font-black text-black">
-                    <span>EVM_SYNC</span>
-                    <span>100%</span>
+                    <span id="binancecoin-label">PRICE</span>
+                    <span id="binancecoin-price">LOADING...</span>
                 </div>
+                <div id="binancecoin-change" class="mt-2 font-mono text-[10px] font-black uppercase">24h: --</div>
             </div>
         </div>
       </section>
@@ -463,6 +467,68 @@
     }
     tick(); setInterval(tick, 1000);
 
+    // Live Market Oracles (CoinGecko)
+    const ORACLE_IDS = ['bitcoin', 'ethereum', 'solana', 'binancecoin'];
+
+    function formatPrice(value) {
+      return new Intl.NumberFormat('en-US', {
+        style: 'currency',
+        currency: 'USD',
+        maximumFractionDigits: value >= 100 ? 2 : 4
+      }).format(value);
+    }
+
+    function applyNodeState(id, change) {
+      const node = document.getElementById(`node-${id}`);
+      if (!node) return;
+      node.classList.remove('ring-4', 'ring-green-500', 'ring-red-500');
+      if (change > 0) node.classList.add('ring-4', 'ring-green-500');
+      if (change < 0) node.classList.add('ring-4', 'ring-red-500');
+    }
+
+    async function refreshMarketOracle() {
+      const url = 'https://api.coingecko.com/api/v3/simple/price?ids=' + ORACLE_IDS.join(',') + '&vs_currencies=usd&include_24hr_change=true';
+      try {
+        const response = await fetch(url, { cache: 'no-store' });
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        const data = await response.json();
+
+        ORACLE_IDS.forEach((id) => {
+          const priceEl = document.getElementById(`${id}-price`);
+          const changeEl = document.getElementById(`${id}-change`);
+          const payload = data[id];
+          if (!priceEl || !changeEl || !payload) return;
+
+          const price = Number(payload.usd);
+          const change = Number(payload.usd_24h_change || 0);
+          const direction = change > 0 ? '▲' : change < 0 ? '▼' : '■';
+          const color = change > 0 ? 'text-green-600' : change < 0 ? 'text-red-600' : 'text-black';
+
+          priceEl.textContent = formatPrice(price);
+          changeEl.textContent = `24h: ${direction} ${change.toFixed(2)}%`;
+          changeEl.classList.remove('text-green-600', 'text-red-600', 'text-black', 'text-cyber-cyan');
+          changeEl.classList.add(color);
+          if (id === 'solana' && color === 'text-black') changeEl.classList.add('text-cyber-cyan');
+
+          applyNodeState(id, change);
+        });
+      } catch (error) {
+        ORACLE_IDS.forEach((id) => {
+          const priceEl = document.getElementById(`${id}-price`);
+          const changeEl = document.getElementById(`${id}-change`);
+          if (priceEl) priceEl.textContent = 'OFFLINE';
+          if (changeEl) {
+            changeEl.textContent = '24h: FEED ERROR';
+            changeEl.classList.remove('text-green-600', 'text-red-600', 'text-black', 'text-cyber-cyan');
+            changeEl.classList.add('text-red-600');
+          }
+        });
+      }
+    }
+
+    refreshMarketOracle();
+    setInterval(refreshMarketOracle, 60000);
+
     // Simple mouse movement effect for cards
     const cards = document.querySelectorAll('.bento-card');
     cards.forEach(card => {
@@ -470,7 +536,7 @@
         const rect = card.getBoundingClientRect();
         const x = e.clientX - rect.left;
         const y = e.clientY - rect.top;
-        
+
         card.style.setProperty('--mouse-x', `${x}px`);
         card.style.setProperty('--mouse-y', `${y}px`);
       });
