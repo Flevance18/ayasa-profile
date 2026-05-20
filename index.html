@@ -182,19 +182,34 @@
             <span class="badge-action bg-cyber-pink text-white">Researcher</span>
             <span class="badge-action bg-cyber-cyan text-black">Mining Ops</span>
             <span class="badge-action bg-cyber-yellow text-black">DeFi Forensics</span>
-            <a href="https://ayasa-command-center.vercel.app" class="inline-flex items-center gap-2 font-mono font-black text-xs uppercase bg-[#bc13fe] text-white px-3 py-1.5 border-4 border-black shadow-[4px_4px_0px_0px_#ffee00] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_0px_#ffee00] active:translate-y-[2px] transition-all">
-              ⚡ ENTER COMMAND CENTER OS
-            </a>
+          </div>
+          <div class="mt-5 border-4 border-black bg-white p-4 shadow-[6px_6px_0px_0px_#bc13fe] max-w-xl">
+            <p class="font-mono text-[10px] font-black uppercase tracking-widest text-cyber-purple">New interactive mode available</p>
+            <p class="mt-1 font-black uppercase leading-tight text-black">Open the OS-style dashboard for GitHub signal, agent cockpit, DeFi intel, and project control.</p>
+            <button type="button" onclick="openCommandCenterModal()" class="mt-3 inline-flex items-center gap-2 bg-cyber-yellow text-black px-4 py-2 border-4 border-black font-mono text-xs font-black uppercase shadow-[4px_4px_0px_0px_#050606] hover:translate-y-[-2px] hover:shadow-[6px_6px_0px_0px_#050606] active:translate-y-[2px] transition-all">
+              ⚡ Launch Command Center
+            </button>
           </div>
         </div>
       </div>
-      <div class="flex flex-col items-end gap-3 font-mono text-right">
-        <div class="bg-white border-4 border-black px-6 py-3 shadow-brutal-purple">
+      <div class="flex flex-col items-stretch md:items-end gap-4 font-mono text-right w-full md:w-auto">
+        <div class="bg-white border-4 border-black px-6 py-3 shadow-brutal-purple md:self-end">
           <p class="text-[10px] text-black font-black uppercase tracking-widest">System Time</p>
           <p id="utcClock" class="text-3xl font-black text-black">00:00:00</p>
         </div>
-        <div class="text-[10px] font-black uppercase tracking-widest text-black bg-cyber-cyan px-2 border-2 border-black">
+        <div class="text-[10px] font-black uppercase tracking-widest text-black bg-cyber-cyan px-2 border-2 border-black md:self-end">
           LOC: NEO-TOKYO / GRID
+        </div>
+        <div class="bg-cyber-purple text-white border-4 border-black p-5 shadow-brutal-yellow max-w-sm text-left relative overflow-hidden">
+          <div class="absolute -right-10 -top-10 w-28 h-28 bg-cyber-cyan border-4 border-black rotate-12 opacity-80"></div>
+          <p class="relative z-10 text-[10px] font-black uppercase tracking-widest text-cyber-yellow">Portal Launcher</p>
+          <h2 class="relative z-10 font-syne text-3xl font-black uppercase leading-none mt-2">Command Center OS</h2>
+          <p class="relative z-10 mt-3 text-xs font-bold leading-tight text-white/90">
+            Interactive profile dashboard for AI agents, GitHub signal, DeFi intelligence, and project control.
+          </p>
+          <button type="button" onclick="openCommandCenterModal()" class="relative z-10 mt-4 w-full bg-cyber-yellow text-black border-4 border-black px-4 py-3 font-black uppercase shadow-[5px_5px_0px_0px_#050606] hover:translate-y-[-2px] hover:shadow-[7px_7px_0px_0px_#050606] active:translate-y-[2px] transition-all">
+            ⚡ Launch OS Mode →
+          </button>
         </div>
       </div>
     </header>
@@ -461,7 +476,52 @@
     </footer>
   </main>
 
+  <div id="commandCenterModal" class="fixed inset-0 z-[80] hidden items-center justify-center bg-black/70 px-4" role="dialog" aria-modal="true" aria-labelledby="commandCenterTitle">
+    <div class="w-full max-w-2xl border-6 border-black bg-cyber-creamy p-6 shadow-[12px_12px_0px_0px_#ff00ff] relative">
+      <button type="button" onclick="closeCommandCenterModal()" class="absolute right-3 top-3 border-4 border-black bg-white px-3 py-1 font-mono text-xs font-black uppercase shadow-[3px_3px_0px_0px_#050606] hover:bg-cyber-yellow">Close</button>
+      <p class="font-mono text-[10px] font-black uppercase tracking-[0.3em] text-cyber-purple">Boot Prompt</p>
+      <h2 id="commandCenterTitle" class="mt-3 font-syne text-4xl sm:text-6xl font-black uppercase leading-none text-black glitch-text">Enter Command Center?</h2>
+      <p class="mt-5 border-l-8 border-cyber-pink pl-4 font-mono text-sm sm:text-base font-bold leading-tight text-black/80">
+        This opens Ayasa’s interactive OS-style profile: live GitHub signal, Flev Agent cockpit, DeFi intelligence panel, project windows, and terminal interface.
+      </p>
+      <div class="mt-6 grid grid-cols-1 sm:grid-cols-2 gap-4 font-mono text-xs font-black uppercase">
+        <div class="border-4 border-black bg-white p-4 shadow-[4px_4px_0px_0px_#00ffff]">◆ AI Agent Dashboard</div>
+        <div class="border-4 border-black bg-white p-4 shadow-[4px_4px_0px_0px_#ffee00]">◆ GitHub Signal Feed</div>
+        <div class="border-4 border-black bg-white p-4 shadow-[4px_4px_0px_0px_#bc13fe]">◆ DeFi Intel Window</div>
+        <div class="border-4 border-black bg-white p-4 shadow-[4px_4px_0px_0px_#ff00ff]">◆ Terminal Control Deck</div>
+      </div>
+      <div class="mt-8 flex flex-col sm:flex-row gap-4">
+        <a href="https://ayasa-command-center.vercel.app" class="flex-1 text-center border-4 border-black bg-cyber-yellow px-5 py-4 font-mono text-sm font-black uppercase text-black shadow-[6px_6px_0px_0px_#050606] hover:translate-y-[-2px] hover:shadow-[8px_8px_0px_0px_#050606] active:translate-y-[2px] transition-all">⚡ Enter OS</a>
+        <button type="button" onclick="closeCommandCenterModal()" class="flex-1 border-4 border-black bg-white px-5 py-4 font-mono text-sm font-black uppercase text-black shadow-[6px_6px_0px_0px_#050606] hover:bg-cyber-cyan transition-all">Stay on Profile</button>
+      </div>
+    </div>
+  </div>
+
   <script>
+    const commandCenterModal = document.getElementById('commandCenterModal');
+
+    function openCommandCenterModal() {
+      if (!commandCenterModal) return;
+      commandCenterModal.classList.remove('hidden');
+      commandCenterModal.classList.add('flex');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeCommandCenterModal() {
+      if (!commandCenterModal) return;
+      commandCenterModal.classList.add('hidden');
+      commandCenterModal.classList.remove('flex');
+      document.body.style.overflow = '';
+    }
+
+    commandCenterModal?.addEventListener('click', (event) => {
+      if (event.target === commandCenterModal) closeCommandCenterModal();
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeCommandCenterModal();
+    });
+
     // UTC Clock
     const clock = document.getElementById('utcClock');
     function tick(){
